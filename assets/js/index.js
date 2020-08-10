@@ -46,9 +46,9 @@ async function load() {
 
 
     for (let i = 0; i < products.length; i++) {
-        for (x of products.categories) {
-            if (x.id = 9) {
-                create_item(products[i]);
+        for (x of products[i].categories) { //product thieu [i]
+            if (x.id == 9) { //thieu dau = 
+                create_item(products[i], stringHTML); //truyen vao doi tuong stringHTML
             }
         }
     }
@@ -80,7 +80,7 @@ function create_cate(category) {
     console.log(stringHTMLCate);
 }
 
-function create_item(products) {
+function create_item(products, ob) {
     let stringItem = "";
     stringItem += "<div class=\"col-lg-3 col-6 product-incfhny mt-4\">";
     stringItem += "<div class=\"product-grid2 transmitv\">";
@@ -113,7 +113,7 @@ function create_item(products) {
     stringItem += "</div>";
     stringItem += "</div>";
     stringItem += "</div>";
-    stringHTML += stringItem;
+    ob.string += stringItem;
 }
 
 load();
