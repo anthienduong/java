@@ -85,9 +85,9 @@ function create_item(products, ob) {
     stringItem += "<div class=\"col-lg-3 col-6 product-incfhny mt-4\">";
     stringItem += "<div class=\"product-grid2 transmitv\">";
     stringItem += "<div class=\"product-image2\">";
-    stringItem += "<a href=\"#\">";
-    stringItem += "<img class=\"pic-1 img-fluid\" src=\"data:image/png;base64," + products.imageBase64 + "\">";
-    stringItem += "<img class=\"pic-2 img-fluid\" src=\"data:image/png;base64," + products.imageBase64 + "\">";
+    stringItem += "<a href=\"single.html\">";
+    stringItem += "<img class=\"pic-1 img-fluid\"onclick=\"show_product(" + products.id + ")\" src=\"data:image/png;base64," + products.imageBase64 + "\">";
+    stringItem += "<img class=\"pic-2 img-fluid\"onclick=\"show_product(" + products.id + ")\" src=\"data:image/png;base64," + products.imageBase64 + "\">";
     stringItem += "</a>";
     stringItem += "<ul class=\"social\">";
     stringItem += "<li><a href=\"#\" data-tip=\"Quick View\"><span class=\"fa fa-eye\"></span></a></li>";
@@ -116,4 +116,7 @@ function create_item(products, ob) {
     ob.string += stringItem;
 }
 
+function show_product(id) {
+    sessionStorage.setItem("id_product", id);
+}
 load();
